@@ -30,6 +30,19 @@ DownloadManager *DownloadManager::_instance = nullptr;
 DownloadManager::DownloadManager() :
     accessManager(this), serverUrl(ApplicationSettings::getInstance()->downloadServerUrl())
 {
+    auto sslConfig = QSslConfiguration::defaultConfiguration();
+    QList<QSslCertificate> certificates = sslConfig.caCertificates();
+
+    QFile file(":/gcompris/src/core/resource/isrgrootx1.pem");
+    QIODevice::OpenMode openMode = QIODevice::ReadOnly | QIODevice::Text;
+    if (!file.open(openMode)) {
+        qDebug() << "Error opening " << file;
+    }
+    certificates << QSslCertificate::fromData(file.readAll(), QSsl::Pem);
+    sslConfig.setCaCertificates(certificates);
+    for(const auto &cert: certificates)
+        qDebug() << "SSL certificates list: " << cert;
+    QSslConfiguration::setDefaultConfiguration(sslConfig);
 }
 
 DownloadManager::~DownloadManager()
