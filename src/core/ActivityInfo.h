@@ -112,6 +112,7 @@ class ActivityInfo : public QObject
     Q_PROPERTY(QString credit READ credit WRITE setCredit NOTIFY creditChanged)
 
     Q_PROPERTY(bool favorite READ favorite WRITE setFavorite NOTIFY favoriteChanged)
+    Q_PROPERTY(bool moonFavorite READ moonFavorite WRITE setMoonFavorite NOTIFY moonFavoriteChanged)
 
     /**
      * This activity is enabled.
@@ -175,6 +176,8 @@ public:
     void setCredit(const QString &);
     bool favorite() const;
     void setFavorite(const bool);
+    bool moonFavorite() const;
+    void setMoonFavorite(const bool);
     bool enabled() const;
     void setEnabled(const bool);
     int createdInVersion() const;
@@ -207,6 +210,7 @@ signals:
     void manualChanged();
     void creditChanged();
     void favoriteChanged();
+    void moonFavoriteChanged();
     void enabledChanged();
     void createdInVersionChanged();
     void levelsChanged();
@@ -229,6 +233,7 @@ private:
     QString m_manual;
     QString m_credit;
     bool m_favorite;
+    bool m_moon_favorite;
     bool m_enabled;
     int m_createdInVersion;
     QStringList m_levels;

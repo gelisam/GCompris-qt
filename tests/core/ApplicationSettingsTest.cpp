@@ -136,6 +136,15 @@ void CoreApplicationSettingsTest::ActivitySettingsTest()
     applicationSettingsMock.setFavorite(dummyActivity, false);
     QVERIFY(!applicationSettingsMock.isFavorite(dummyActivity));
 
+    // By Default the DummyActivity is not moon favorite
+    QVERIFY(!applicationSettingsMock.isMoonFavorite(dummyActivity));
+    // Setting Up the DummyActivity as MoonFavorite
+    applicationSettingsMock.setMoonFavorite(dummyActivity, true);
+    QVERIFY(applicationSettingsMock.isMoonFavorite(dummyActivity));
+    // setting Up the DummyActivity as Not moon favorite
+    applicationSettingsMock.setMoonFavorite(dummyActivity, false);
+    QVERIFY(!applicationSettingsMock.isMoonFavorite(dummyActivity));
+
     // By Default the activity progress is zero
     QCOMPARE(applicationSettingsMock.loadActivityProgress(dummyActivity), 0);
     // Saving the Activity Progress

@@ -23,6 +23,7 @@ ActivityInfo::ActivityInfo(QObject *parent) :
     m_minimalDifficulty(0),
     m_maximalDifficulty(0),
     m_favorite(false),
+    m_moon_favorite(false),
     m_enabled(true),
     m_createdInVersion(0)
 {
@@ -39,6 +40,7 @@ void ActivityInfo::setName(const QString &name)
     // Once we are given a name, we can get the favorite property
     // from the persistant configuration
     m_favorite = ApplicationSettings::getInstance()->isFavorite(m_name);
+    m_moon_favorite = ApplicationSettings::getInstance()->isMoonFavorite(m_name);
 
     setCurrentLevels();
 
@@ -174,6 +176,17 @@ void ActivityInfo::setFavorite(const bool favorite)
     m_favorite = favorite;
     ApplicationSettings::getInstance()->setFavorite(m_name, m_favorite);
     emit favoriteChanged();
+}
+
+bool ActivityInfo::moonFavorite() const
+{
+    return m_moon_favorite;
+}
+void ActivityInfo::setMoonFavorite(const bool moon_favorite)
+{
+    m_moon_favorite = moon_favorite;
+    ApplicationSettings::getInstance()->setMoonFavorite(m_name, m_moon_favorite);
+    emit moonFavoriteChanged();
 }
 
 bool ActivityInfo::enabled() const

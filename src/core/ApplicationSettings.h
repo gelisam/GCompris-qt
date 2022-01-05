@@ -43,6 +43,9 @@
  * The <em>[Favorite]</em> group is auto-generated from the favorite activities
  * selected by a user.
  *
+ * The <em>[MoonFavorite]</em> group is auto-generated from the moon favorite activities
+ * selected by a user.
+ *
  * The <em>[Levels]</em> group is auto-generated from the levels chosen by
  * a user (if the activity provides multiple datasets).
  *
@@ -566,6 +569,8 @@ protected slots:
 public slots:
     Q_INVOKABLE bool isFavorite(const QString &activity);
     Q_INVOKABLE void setFavorite(const QString &activity, bool favorite);
+    Q_INVOKABLE bool isMoonFavorite(const QString &activity);
+    Q_INVOKABLE void setMoonFavorite(const QString &activity, bool moon_favorite);
     Q_INVOKABLE void setCurrentLevels(const QString &activity, const QStringList &level, bool sync = true);
     Q_INVOKABLE QStringList currentLevels(const QString &activity);
 

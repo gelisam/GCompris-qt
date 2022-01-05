@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--Created with Inkscape (http://www.inkscape.org/)-->
+
+<svg
+   width="50"
+   height="50"
+   sodipodi:version="0.32"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   version="1.0"
+   sodipodi:docname="moon_all.svg"
+   id="svg1558"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs1560" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="4.9259717"
+     inkscape:cx="-24.056167"
+     inkscape:cy="28.217783"
+     inkscape:document-units="px"
+     inkscape:current-layer="g1556"
+     width="50px"
+     height="50px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1011"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     showgrid="false"
+     inkscape:window-maximized="1"
+     id="namedview1544"
+     inkscape:pagecheckerboard="0"
+     inkscape:snap-others="true"
+     inkscape:snap-global="false" />
+  <metadata
+     id="metadata1546">
+    <rdf:RDF>
+      <cc:Work>
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+        <dc:date>2015</dc:date>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Timothée Giet</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <cc:license
+           rdf:resource="http://creativecommons.org/licenses/by-sa/4.0/" />
+      </cc:Work>
+      <cc:License
+         rdf:about="http://creativecommons.org/licenses/by-sa/4.0/">
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Reproduction" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#Distribution" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Notice" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#Attribution" />
+        <cc:permits
+           rdf:resource="http://creativecommons.org/ns#DerivativeWorks" />
+        <cc:requires
+           rdf:resource="http://creativecommons.org/ns#ShareAlike" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="g1556">
+    <path
+       id="path1548"
+       style="display:inline;overflow:visible;opacity:1;fill:#a5cbfc;stroke-linecap:round;stroke-linejoin:round;marker:none;enable-background:accumulate"
+       d="M 22.962891,0.86914062 A 24.132284,24.130707 0 0 0 7.3046875,6.6855469 21.493618,18.835512 0 0 1 23.544922,27.632812 l -0.0078,0.05469 A 21.493618,18.835512 0 0 1 7.2441406,43.273438 24.132284,24.130707 0 0 0 19.568359,48.884766 24.132284,24.130707 0 0 0 46.884766,28.449219 l 0.0098,-0.07031 A 24.132284,24.130707 0 0 0 26.396484,1.109375 24.132284,24.130707 0 0 0 22.962891,0.86914062 Z" />
+    <path
+       id="path1550"
+       style="display:inline;overflow:visible;opacity:1;fill:#deecfe;stroke-linecap:round;stroke-linejoin:round;marker:none;enable-background:accumulate"
+       d="M 22.966797,2.8046875 A 22.196302,22.196302 0 0 0 11.447266,6.0839844 23.459964,20.558681 0 0 1 25.492188,27.873047 l -0.0098,0.06055 a 23.459964,20.558681 0 0 1 -14.078125,15.960937 22.196302,22.196302 0 0 0 8.439453,3.076172 22.196302,22.196302 0 0 0 25.125,-18.796875 l 0.0098,-0.06641 A 22.196302,22.196302 0 0 0 26.125,3.0253906 22.196302,22.196302 0 0 0 22.966797,2.8046875 Z" />
+  </g>
+</svg>

@@ -67,6 +67,7 @@ function addPropertiesToCategories(categories) {
         categories[i]['name'] = categories[i].name
         categories[i]['image'] = categories[i].image
         categories[i]['favorite'] = false
+        categories[i]['moonFavorite'] = false
         categories[i]['categoryIndex'] = i
     }
 }
@@ -79,7 +80,8 @@ function categoriesToSavedProperties() {
     for(var i = 0; i < items.menuModel.count; i++) {
         var category = items.menuModel.get(i)
         props[category.name] = {
-            'favorite': category['favorite']
+            'favorite': category['favorite'],
+            'moonFavorite': category['moonFavorite'],
         }
     }
     return props
@@ -93,9 +95,11 @@ function savedPropertiesToCategories(dataToSave) {
         var categoryname = category.name
         if(props && props[category.name]) {
             category['favorite'] = props[category.name].favorite
+            category['moonFavorite'] = props[category.name].moonFavorite
         }
         else {
             category['favorite'] = false
+            category['moonFavorite'] = false
         }
     }
 }

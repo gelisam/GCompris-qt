@@ -113,6 +113,10 @@ ActivityBase {
             tag: "favorite"
         },
         {
+            icon: activity.url + "moon-all.svg",
+            tag: "moonFavorite"
+        },
+        {
             icon: activity.url + "computer.svg",
             tag: "computer"
         },
@@ -386,6 +390,47 @@ ActivityBase {
             }
         }
 
+        Loader {
+            id: moonWarningOverlay
+            anchors {
+                bottom: parent.bottom
+                right: parent.right
+                margins: 4
+            }
+            active: (ActivityInfoTree.menuTree.length === 0) && (currentTag === "moonFavorite")
+            sourceComponent: Item {
+                anchors.fill: parent
+                GCText {
+                    id: instructionTxt
+                    fontSize: smallSize
+                    y: height * 0.2
+                    x: (parent.width - width) / 2
+                    z: 2
+                    width: parent.width * 0.6
+                    horizontalAlignment: Text.AlignHCenter
+                    wrapMode: Text.WordWrap
+                    font.weight: Font.DemiBold
+                    color: 'white'
+                    text: qsTr("Put your completed activities here by clicking on the " +
+                               "moon at the top right of that activity.")
+                }
+                Rectangle {
+                    anchors.fill: instructionTxt
+                    anchors.margins: -6
+                    z: 1
+                    opacity: 0.5
+                    radius: 10
+                    border.width: 2
+                    border.color: "black"
+                    gradient: Gradient {
+                        GradientStop { position: 0.0; color: "#000" }
+                        GradientStop { position: 0.9; color: "#666" }
+                        GradientStop { position: 1.0; color: "#AAA" }
+                    }
+                }
+            }
+        }
+
         GridView {
             id: categoriesGrid
             model: currentTagCategories
@@ -554,13 +599,28 @@ ActivityBase {
                     anchors {
                         top: parent.top
                         right: parent.right
-                        rightMargin: 4 * ApplicationInfo.ratio
+                        rightMargin: 4 * ApplicationInfo.ratio + iconWidth * 0.25
                     }
                     sourceSize.width: iconWidth * 0.25
                     visible: ApplicationSettings.sectionVisible
                     MouseArea {
                         anchors.fill: parent
                         onClicked: favorite = !favorite
+                    }
+                }
+
+                Image {
+                    source: activity.url + (moonFavorite ? "moon-all.svg" : "moon-all_disabled.svg");
+                    anchors {
+                        top: parent.top
+                        right: parent.right
+                        rightMargin: 4 * ApplicationInfo.ratio
+                    }
+                    sourceSize.width: iconWidth * 0.25
+                    visible: ApplicationSettings.sectionVisible
+                    MouseArea {
+                        anchors.fill: parent
+                        onClicked: moonFavorite = !moonFavorite
                     }
                 }
 
@@ -839,6 +899,11 @@ ActivityBase {
                     anchors.left: background.left
                 }
                 AnchorChanges {
+                    target: moonWarningOverlay
+                    anchors.top: section.bottom
+                    anchors.left: background.left
+                }
+                AnchorChanges {
                     target: categoriesGrid
                     anchors.top: section.bottom
                 }
@@ -905,6 +970,11 @@ ActivityBase {
                     anchors.left: section.right
                 }
                 AnchorChanges {
+                    target: moonWarningOverlay
+                    anchors.top: background.top
+                    anchors.left: section.right
+                }
+                AnchorChanges {
                     target: categoriesGrid
                     anchors.top: background.top
                 }
@@ -967,6 +1037,11 @@ ActivityBase {
                 }
                 AnchorChanges {
                     target: warningOverlay
+                    anchors.top: background.top
+                    anchors.left: section.right
+                }
+                AnchorChanges {
+                    target: moonWarningOverlay
                     anchors.top: background.top
                     anchors.left: section.right
                 }

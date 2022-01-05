@@ -69,6 +69,7 @@ function addPropertiesToLessons(lessons) {
         lessons[i]['image'] = lessons[i].content[0].image
         lessons[i]['progress'] = 0
         lessons[i]['favorite'] = false
+        lessons[i]['moonFavorite'] = false
         // We need to keep a back reference from the model to the lessons array
         lessons[i]['lessonIndex'] = i
     }
@@ -82,6 +83,7 @@ function lessonsToSavedProperties() {
         var lesson = items.menuModel.get(i)
         props[lesson.name] = {
             'favorite': lesson['favorite'],
+            'moonFavorite': lesson['moonFavorite'],
             'progress': lesson['progress']
         }
     }
@@ -96,9 +98,11 @@ function savedPropertiesToLessons(dataToSave) {
         var lesson = items.menuModel.get(i)
         if(props && props[lesson.name]) {
             lesson['favorite'] = props[lesson.name].favorite
+            lesson['moonFavorite'] = props[lesson.name].moonFavorite
             lesson['progress'] = props[lesson.name].progress
         } else {
             lesson['favorite'] = false
+            lesson['moonFavorite'] = false
             lesson['progress'] = 0
         }
     }

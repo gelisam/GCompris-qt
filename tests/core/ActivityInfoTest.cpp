@@ -50,6 +50,7 @@ void CoreActivityInfoTest::ActivityInfoTest_data()
     QTest::addColumn<QString>("manual");
     QTest::addColumn<QString>("credit");
     QTest::addColumn<bool>("favorite");
+    QTest::addColumn<bool>("moonFavorite");
     QTest::addColumn<bool>("enabled");
     QTest::addColumn<int>("createdInVersion");
 
@@ -76,6 +77,7 @@ void CoreActivityInfoTest::ActivityInfoTest()
     QVERIFY(activityinfo.manual().isEmpty());
     QVERIFY(activityinfo.credit().isEmpty());
     QVERIFY(!activityinfo.favorite());
+    QVERIFY(!activityinfo.moonFavorite());
     QVERIFY(activityinfo.enabled());
     QCOMPARE(activityinfo.createdInVersion(), 0);
 
@@ -93,6 +95,7 @@ void CoreActivityInfoTest::ActivityInfoTest()
     ACTIVITY_INFO_TEST_ATTRIBUTE(manual, Manual, QString);
     ACTIVITY_INFO_TEST_ATTRIBUTE(credit, Credit, QString);
     ACTIVITY_INFO_TEST_ATTRIBUTE(favorite, Favorite, bool);
+    ACTIVITY_INFO_TEST_ATTRIBUTE(moonFavorite, MoonFavorite, bool);
     ACTIVITY_INFO_TEST_ATTRIBUTE(enabled, Enabled, bool);
     ACTIVITY_INFO_TEST_ATTRIBUTE(createdInVersion, CreatedInVersion, int);
 

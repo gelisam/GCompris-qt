@@ -31,6 +31,7 @@ static const char *GENERAL_GROUP_KEY = "General";
 static const char *ADMIN_GROUP_KEY = "Admin";
 static const char *INTERNAL_GROUP_KEY = "Internal";
 static const char *FAVORITE_GROUP_KEY = "Favorite";
+static const char *MOON_FAVORITE_GROUP_KEY = "MoonFavorite";
 static const char *LEVELS_GROUP_KEY = "Levels";
 
 static const char *FULLSCREEN_KEY = "fullscreen";
@@ -469,6 +470,19 @@ bool ApplicationSettings::isFavorite(const QString &activity)
     bool favorite = m_config.value(activity, false).toBool();
     m_config.endGroup();
     return favorite;
+}
+
+void ApplicationSettings::setMoonFavorite(const QString &activity, bool moon_favorite)
+{
+    updateValueInConfig(MOON_FAVORITE_GROUP_KEY, activity, moon_favorite);
+}
+
+bool ApplicationSettings::isMoonFavorite(const QString &activity)
+{
+    m_config.beginGroup(MOON_FAVORITE_GROUP_KEY);
+    bool moon_favorite = m_config.value(activity, false).toBool();
+    m_config.endGroup();
+    return moon_favorite;
 }
 
 void ApplicationSettings::setCurrentLevels(const QString &activity, const QStringList &level, bool sync)
