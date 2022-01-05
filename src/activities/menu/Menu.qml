@@ -213,8 +213,8 @@ ActivityBase {
 
         // Filters
         property bool horizontal: main.width >= main.height
-        property int sectionIconWidth: Math.min(100 * ApplicationInfo.ratio, main.width / (sections.length + 1))
-        property int sectionCellWidth: sectionIconWidth * 1.1
+        property int sectionIconWidth: Math.min(100 * ApplicationInfo.ratio, main.width / sections.length)
+        property int sectionCellWidth: sectionIconWidth * 1.0
         property int categoriesHeight: currentCategory == "" ? 0 : sectionCellWidth - 2
 
         property var currentActiveGrid: activitiesGrid
